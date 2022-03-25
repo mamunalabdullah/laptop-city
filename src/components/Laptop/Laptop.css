@@ -10,7 +10,7 @@
     width: 100%;
     border-radius: 10px;
 }
-.cart-btn{
+.add-btn{
     width: 100%;
     background-color: aqua;
     border: 0;
@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
 }
-.cart-btn:hover{
+.add-btn:hover{
     background-color: brown;
     color: #fff;
     cursor: pointer;

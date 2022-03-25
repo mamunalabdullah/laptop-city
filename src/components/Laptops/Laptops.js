@@ -1,4 +1,6 @@
-import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDeleteLeft, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 import Laptop from '../Laptop/Laptop';
 import "./Laptops.css";
 
@@ -95,7 +97,13 @@ const Laptops = () => {
           "name": "Asus Notebook"
         }
       ]
+      const [cart, setCart] = useState([]);
       
+      const handleAddCart = (laptop) =>{
+        console.log("add clicked");
+        const newCart = [...cart, laptop];
+        setCart(newCart);
+    }
     return (
         
         <div className='laptops-shop'>
@@ -104,11 +112,23 @@ const Laptops = () => {
                     laptops.map(laptop => <Laptop 
                         key={laptop.id}
                         laptop={laptop}
+                        handleAddCart={handleAddCart}
                     ></Laptop>)
                 };
             </div>
             <div className="cart">
                 <h1>cart</h1>
+                <h3>selected items: {cart.length}</h3>
+                <div className="buttons">
+                    <button className='choose-btn'>
+                        <p className='txt1'>Choose one</p>
+                        <FontAwesomeIcon icon={faShoppingBag}></FontAwesomeIcon>
+                    </button>
+                    <button className='remove-btn'>
+                        <p className='txt2'>Remove</p>
+                        <FontAwesomeIcon icon={faDeleteLeft}></FontAwesomeIcon>
+                    </button>
+                </div>
             </div>
         </div>
     );
