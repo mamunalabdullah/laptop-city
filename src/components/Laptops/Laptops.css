@@ -1,0 +1,8 @@
+.laptops-shop{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.laptops{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

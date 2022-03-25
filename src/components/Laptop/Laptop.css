@@ -1,0 +1,34 @@
+.laptop{
+    padding: 10px;
+    height: 350px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 30px;
+    position: relative;
+}
+.laptop img{
+    width: 100%;
+    border-radius: 10px;
+}
+.cart-btn{
+    width: 100%;
+    background-color: aqua;
+    border: 0;
+    border-radius: 0 0 10px 10px;
+    font-weight: bold;
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-btn:hover{
+    background-color: brown;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-txt{
+    margin-right: 10px;
+}
