@@ -10,21 +10,17 @@ const Cart = ({ cart , resetCart, chooseHandle }) => {
     for(const laptop of cart){
         quantity = quantity + laptop.quantity;
     }
-
-    if (quantity === 4) {
-        alert("You can't add more than 4 products");
-    }
     return (
 
-        <div className="cart">
+        <div className="cart" >
             <h1>Selected Laptops</h1>
             <div>
                 {
                     cart.map((item) => (
                         
-                        <div className='item-info'>
+                        <div className='item-info' key={item.id}>
                             <img src={item.picture} alt="" />
-                            <h5 key={item.id}>{item.name}</h5>
+                            <h5>{item.name}</h5>
                             <button className='delete-btn'>
                                 <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
                             </button>

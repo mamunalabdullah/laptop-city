@@ -4,6 +4,8 @@ import Laptop from '../Laptop/Laptop';
 import "./Laptops.css";
 
 const Laptops = () => {
+
+  // fake data 
     const laptops =[
         {
           "id": 1,
@@ -96,13 +98,16 @@ const Laptops = () => {
           "name": "Asus Notebook"
         }
       ]
+
       const [cart, setCart] = useState([]);
-      
+
+      // addToCart handle
       const handleAddCart = (selectedLaptop) =>{
         let newCart = [];
         const exists = cart.find(laptop => laptop.id === selectedLaptop.id);
         const cartLength = [...cart, selectedLaptop].length;
 
+        // product limit
         if (cartLength > 4) {
           alert("You can not add more than 4 items in the cart");
         }
