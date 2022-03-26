@@ -7,3 +7,14 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+
+@media  screen and (max-width: 568px) {
+    .laptops-shop{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    .laptops{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

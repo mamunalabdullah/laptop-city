@@ -101,7 +101,12 @@ const Laptops = () => {
       const handleAddCart = (selectedLaptop) =>{
         let newCart = [];
         const exists = cart.find(laptop => laptop.id === selectedLaptop.id);
-        if(!exists){
+        const cartLength = [...cart, selectedLaptop].length;
+
+        if (cartLength > 4) {
+          alert("You can not add more than 4 items in the cart");
+        }
+        else if(!exists){
                 newCart = [...cart, selectedLaptop];
         }else{
           const rest = cart.filter(laptop => laptop.id !== selectedLaptop.id);
@@ -109,16 +114,19 @@ const Laptops = () => {
         }
 
         setCart(newCart);
+        
       }
 
+      // reset cart 
       const resetCart =()=>{
         setCart([]);
-    }
+      }
 
-    const chooseHandle =()=>{
+      // random choice
+      const chooseHandle =()=>{
         const choice = cart[Math.floor(Math.random()*cart.length)];
         setCart([choice]);
-    };
+      };
 
       
     return (

@@ -5,10 +5,14 @@ import "./Cart.css";
 
 
 const Cart = ({ cart , resetCart, chooseHandle }) => {
-    const{ name }=cart;
+    const{ name }= cart;
     let quantity =0;
     for(const laptop of cart){
         quantity = quantity + laptop.quantity;
+    }
+
+    if (quantity === 4) {
+        alert("You can't add more than 4 products");
     }
     return (
 
