@@ -1,6 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDeleteLeft, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
+import Cart from '../Cart/Cart';
 import Laptop from '../Laptop/Laptop';
 import "./Laptops.css";
 
@@ -103,9 +102,9 @@ const Laptops = () => {
         console.log("add clicked");
         const newCart = [...cart, laptop];
         setCart(newCart);
-    }
+      }
     return (
-        
+      <div>
         <div className='laptops-shop'>
             <div className="laptops">
                 {
@@ -116,21 +115,11 @@ const Laptops = () => {
                     ></Laptop>)
                 };
             </div>
-            <div className="cart">
-                <h1>cart</h1>
-                <h3>selected items: {cart.length}</h3>
-                <div className="buttons">
-                    <button className='choose-btn'>
-                        <p className='txt1'>Choose one</p>
-                        <FontAwesomeIcon icon={faShoppingBag}></FontAwesomeIcon>
-                    </button>
-                    <button className='remove-btn'>
-                        <p className='txt2'>Remove</p>
-                        <FontAwesomeIcon icon={faDeleteLeft}></FontAwesomeIcon>
-                    </button>
-                </div>
+            <div>
+                <Cart cart={cart}></Cart>
             </div>
         </div>
+      </div>
     );
 };
 
