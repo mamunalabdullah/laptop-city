@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fontawesome/react-fontawesome';
-import { faShoppingCart } from "@fontawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
 
 import React from 'react';
 import "./Laptop.css";

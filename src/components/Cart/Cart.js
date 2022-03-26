@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fontawesome/react-fontawesome';
-import { faDeleteLeft, faShoppingBag, faTrash } from '@fontawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDeleteLeft, faShoppingBag, faTrash } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import "./Cart.css";
 
