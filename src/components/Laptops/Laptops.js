@@ -99,10 +99,11 @@ const Laptops = () => {
       const [cart, setCart] = useState([]);
       
       const handleAddCart = (laptop) =>{
-        console.log("add clicked");
         const newCart = [...cart, laptop];
         setCart(newCart);
       }
+
+      
     return (
       <div>
         <div className='laptops-shop'>
