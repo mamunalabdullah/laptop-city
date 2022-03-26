@@ -6,14 +6,14 @@ import "./Laptop.css";
 
 
 const Laptop = (props) => {
-    const {picture, name, price} = props.laptop;
+    const {picture, name, price, id} = props.laptop;
 
     
     return (
          
             <div className='laptop'>
                 <img src={picture} alt="" />
-                <h3>Model: {name}</h3>
+                <h3 key={id}>Model: {name}</h3>
                 <p>Price: {price}</p>
                 <button onClick={() => props.handleAddCart(props.laptop)} className='add-btn'>
                     <p className='btn-txt'>Add to Cart</p>

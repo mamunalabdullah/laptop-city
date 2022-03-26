@@ -98,10 +98,27 @@ const Laptops = () => {
       ]
       const [cart, setCart] = useState([]);
       
-      const handleAddCart = (laptop) =>{
-        const newCart = [...cart, laptop];
+      const handleAddCart = (selectedLaptop) =>{
+        let newCart = [];
+        const exists = cart.find(laptop => laptop.id === selectedLaptop.id);
+        if(!exists){
+                newCart = [...cart, selectedLaptop];
+        }else{
+          const rest = cart.filter(laptop => laptop.id !== selectedLaptop.id);
+          newCart = [...rest, exists];
+        }
+
         setCart(newCart);
       }
+
+      const resetCart =()=>{
+        setCart([]);
+    }
+
+    const chooseHandle =()=>{
+        const choice = cart[Math.floor(Math.random()*cart.length)];
+        setCart([choice]);
+    };
 
       
     return (
@@ -117,7 +134,11 @@ const Laptops = () => {
                 };
             </div>
             <div>
-                <Cart cart={cart}></Cart>
+                <Cart 
+                cart={cart}
+                resetCart={resetCart}
+                chooseHandle={chooseHandle}
+                ></Cart>
             </div>
         </div>
       </div>
